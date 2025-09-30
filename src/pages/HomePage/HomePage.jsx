@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import MoviesList from "../../contents/MoviesList/MoviesList.jsx";
 import { fetchTrendingMovies } from "../../utils/api.js";
-
-import style from "./HomePage.module.css";
+import MoviesList from "../../contents/MoviesList/MoviesList.jsx";
 
 const HomePage = () => {
   
@@ -20,7 +18,7 @@ const HomePage = () => {
   console.log(trendingMovies);
   
   return (
-      <div className={style.container}>
+      <div>
         <h1>Trending Movies</h1>
         
         {trendingMovies.length > 0 &&

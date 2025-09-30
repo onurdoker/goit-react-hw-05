@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import MoviesList from "../../contents/MoviesList/MoviesList.jsx";
-
-import SearchBar from "../../contents/SearchBar/SearchBar.jsx";
 import { fetchSearchMovies } from "../../utils/api.js";
+import MoviesList from "../../contents/MoviesList/MoviesList.jsx";
+import SearchBar from "../../contents/SearchBar/SearchBar.jsx";
 
 const MoviesPage = () => {
   
