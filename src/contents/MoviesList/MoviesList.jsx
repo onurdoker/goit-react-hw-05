@@ -26,7 +26,10 @@ const MoviesList = (movies) => {
                 >
                   <img
                       className={styles.image}
-                      src={`${BASE_URL}${movie.poster_path}`}
+                      src={movie.poster_path
+                          ? `${BASE_URL}${movie.poster_path}`
+                          : "https://dummyimage.com/270x400/CCCCCC/646CFF.jpg&text=image+not+found"
+                      }
                       alt={movie.title}
                   />
                   <div className={styles.title}>
