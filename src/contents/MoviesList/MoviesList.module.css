@@ -23,19 +23,20 @@
 
 .image {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    width: 280px;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*box-sizing: border-box;*/
+    width: 270px;
+    min-width: 270px;
     height: 400px;
     min-height: 400px;
-    margin-top: 10px;
+    margin-top: 15px;
     text-align: center;
     border: 1px solid #CCCCCC;
     border-radius: 10px;
     background-color: #CCCCCC;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .title {
@@ -45,7 +46,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 90px;
+    height: 85px;
     text-align: center;
 }
 
