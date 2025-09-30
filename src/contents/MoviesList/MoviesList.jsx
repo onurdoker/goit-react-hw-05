@@ -1,8 +1,10 @@
+import { Link, useLocation } from "react-router";
 import styles from "./MoviesList.module.css";
 
 const MoviesList = (movies) => {
   
   const BASE_URL = "https://image.tmdb.org/t/p/w500";
+  const location = useLocation();
   
   if (movies.trendingMovies) {
     movies = movies.trendingMovies;
@@ -18,14 +20,19 @@ const MoviesList = (movies) => {
                   className={styles.card}
                   key={movie.id}
               >
-                <img
-                    className={styles.image}
-                    src={`${BASE_URL}${movie.poster_path}`}
-                    alt={movie.title}
-                />
-                <div className={styles.title}>
-                  <p>{movie.title}</p>
-                </div>
+                <Link
+                    to={`/movie/${movie.id}`}
+                    state={{ from: location }}
+                >
+                  <img
+                      className={styles.image}
+                      src={`${BASE_URL}${movie.poster_path}`}
+                      alt={movie.title}
+                  />
+                  <div className={styles.title}>
+                    <p>{movie.title}</p>
+                  </div>
+                </Link>
               </li>
           ))}
         
