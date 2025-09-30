@@ -1,19 +1,19 @@
-// import { sytles } from "./SearchBar.module.css";
+import styles from "./SearchBar.module.css";
 
-const SearchBar = () => {
+const SearchBar = ({ setSearch }) => {
   
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    const setSearch = event.target.search.value;
-    console.log(setSearch);
+    setSearch(event.target.search.value);
   };
   
   
   return (
-      <div>
+      <div className={styles.container}>
         <form onSubmit={handleSubmit}>
           <input
+              className={styles.input}
               name={"search"}
               type={"text"}
               autoComplete={"off"}
@@ -21,7 +21,7 @@ const SearchBar = () => {
               placeholder={"Search for movies"}
           
           />
-          <button>Search</button>
+          <button className={styles.btn}>Search</button>
         </form>
       
       </div>
