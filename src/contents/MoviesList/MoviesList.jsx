@@ -1,14 +1,19 @@
-const MoviesList = (trendingMovies) => {
+const MoviesList = (movies) => {
+  
+  if (movies.searchMovies) {
+    movies = movies.searchMovies;
+  } else if (movies.trendingMovies) {
+    movies = movies.trendingMovies;
+  }
   
   return (
       <div>
         <ul>
-          {trendingMovies.map((movie) => {
-            <li key={movie.id}>
-              {movie.original_title}
-            </li>;
-          })}
-          <li>Movies</li>
+          {movies.map((movie) => (
+              <li key={movie.id}>
+                {movie.id}
+              </li>
+          ))}
         
         </ul>
       </div>

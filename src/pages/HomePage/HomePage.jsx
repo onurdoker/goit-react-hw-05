@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import MoviesList from "../../contents/MoviesList/MoviesList.jsx";
 import { fetchTrendingMovies } from "../../utils/api.js";
 
 import style from "./HomePage.module.css";
@@ -17,19 +18,14 @@ const HomePage = () => {
             []);
   
   console.log(trendingMovies);
+  
   return (
       <div className={style.container}>
         <h1>Trending Movies</h1>
         
-        <div>
-          <ul>
-            {trendingMovies.map((movie) => {
-              <li key={movie.id}>
-                movie;
-              </li>;
-            })}
-          </ul>
-        </div>
+        {trendingMovies.length > 0 &&
+         <MoviesList trendingMovies={trendingMovies} />
+        }
       
       </div>
   );

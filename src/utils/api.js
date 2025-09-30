@@ -6,8 +6,8 @@ const fetchTrendingMovies = async () => {
   const url = `${BASE_URL}/trending/movie/day`;
   const options = {
     headers: {
-      Authorization: `Bearer ${API_KEY}`,
       accept: "application/json",
+      Authorization: `Bearer ${API_KEY}`,
     },
   };
   try {
@@ -20,4 +20,24 @@ const fetchTrendingMovies = async () => {
   }
 };
 
-export { fetchTrendingMovies };
+const fetchSearchMovies = async ({ search }) => {
+  
+  const url = `${BASE_URL}/search/movie?query=${search}&include_adult=false&language=en-US&page=1`;
+  const options = {
+    // method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+  };
+  try {
+    const response = await fetch(url,
+                                 options);
+    return response.json();
+  } catch (error) {
+    console.error("Error fetching search movies:",
+                  error);
+  }
+};
+
+export { fetchTrendingMovies, fetchSearchMovies };

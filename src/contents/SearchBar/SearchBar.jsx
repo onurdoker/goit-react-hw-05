@@ -4,7 +4,6 @@ const SearchBar = ({ setSearch }) => {
   
   const handleSubmit = (event) => {
     event.preventDefault();
-    
     setSearch(event.target.search.value);
   };
   
