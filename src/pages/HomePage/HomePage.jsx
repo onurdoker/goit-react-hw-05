@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchTrendingMovies } from "../../utils/api.js";
 import MoviesList from "../../contents/MoviesList/MoviesList.jsx";
-import MovieDetailPage from "../MovieDetailPage/MovieDetailPage.jsx";
 
 const HomePage = () => {
   
