@@ -1,7 +1,10 @@
 import "./App.css";
+import { lazy } from "react";
 import { Route, Routes } from "react-router";
-import HomePage from "./pages/HomePage/HomePage.jsx";
-import MoviesPage from "./pages/MoviesPage/MoviesPage.jsx";
+
+const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
+const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage.jsx"));
+const MovieDetailPage = lazy(() => import("./pages/MovieDetailPage/MovieDetailPage.jsx"));
 
 function App() {
   
@@ -15,6 +18,10 @@ function App() {
           <Route
               path={"/MoviesPage"}
               element={<MoviesPage />}
+          />
+          <Route
+              path={"/movie/:id"}
+              element={<MovieDetailPage />}
           />
           <Route
               path={"*"}

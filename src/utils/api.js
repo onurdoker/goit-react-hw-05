@@ -40,4 +40,21 @@ const fetchSearchMovies = async ({ search }) => {
   }
 };
 
-export { fetchTrendingMovies, fetchSearchMovies };
+const fetchMovieDetails = async ({ id }) => {
+  const url = `${BASE_URL}/movie/${id}`;
+  const options = {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+  };
+  try {
+    const response = await fetch(url,
+                                 options);
+    return response.json();
+  } catch (error) {
+    console.error("Error fetching movie details:",
+                  error);
+  }
+};
+export { fetchTrendingMovies, fetchSearchMovies, fetchMovieDetails };

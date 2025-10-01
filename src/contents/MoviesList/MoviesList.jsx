@@ -12,6 +12,10 @@ const MoviesList = (movies) => {
     movies = movies.searchMovies;
   }
   
+  if (!movies) {
+    return <h1>Loading...</h1>;
+  }
+  
   return (
       <div>
         <ul className={styles.container}>

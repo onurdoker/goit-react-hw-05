@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchTrendingMovies } from "../../utils/api.js";
 import MoviesList from "../../contents/MoviesList/MoviesList.jsx";
+import MovieDetailPage from "../MovieDetailPage/MovieDetailPage.jsx";
 
 const HomePage = () => {
   
@@ -15,8 +16,6 @@ const HomePage = () => {
             },
             []);
   
-  console.log(trendingMovies);
-  
   return (
       <div>
         <h1>Trending Movies</h1>
@@ -24,7 +23,6 @@ const HomePage = () => {
         {trendingMovies.length > 0 &&
          <MoviesList trendingMovies={trendingMovies} />
         }
-      
       </div>
   );
 };

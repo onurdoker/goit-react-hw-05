@@ -17,9 +17,6 @@ const MoviesPage = () => {
             },
             [search]);
   
-  console.log(searchMovies);
-  console.log(search);
-  
   return (
       <>
         <SearchBar setSearch={setSearch} />
