@@ -24,7 +24,6 @@ const fetchSearchMovies = async ({ search }) => {
   
   const url = `${BASE_URL}/search/movie?query=${search}&include_adult=false&language=en-US&page=1`;
   const options = {
-    // method: "GET",
     headers: {
       accept: "application/json",
       Authorization: `Bearer ${API_KEY}`,
