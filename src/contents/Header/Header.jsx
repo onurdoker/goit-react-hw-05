@@ -7,8 +7,17 @@ const Header = () => {
       <nav className={styles.header}>
         <NavLink
             to={"/"}
-        >Home</NavLink>
-        <NavLink to={"/MoviesPage"}>Movies</NavLink>
+            className={styles.link}
+        >
+          Home
+        </NavLink>
+        
+        <NavLink
+            to={"/MoviesPage"}
+            className={styles.link}
+        >
+          Movies
+        </NavLink>
       </nav>
   );
 };
