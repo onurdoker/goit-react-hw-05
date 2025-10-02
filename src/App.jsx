@@ -42,7 +42,7 @@ function App() {
         
         <ScrollToTop
             smooth={true}
-            showUnder={200}
+            showunder={200}
             component={"⬆"}
             style={{
               borderRadius: "50%",
