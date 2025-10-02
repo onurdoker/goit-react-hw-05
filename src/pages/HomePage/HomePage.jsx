@@ -12,14 +12,15 @@ const HomePage = () => {
   const navigate = useNavigate();
   const [totalPage, setTotalPage] = useState(0);
   
-  const page = new URLSearchParams(location.search).get("page") || 1;
+  const page = new URLSearchParams(location.search).get("page") ?? 1;
+  
   
   const [trendingMovies, setTrendingMovies] = useState([]);
   
   useEffect(() => {
               const getTrendingMovies = async () => {
                 try {
-                  const trendingMovies = await fetchTrendingMovies(page);
+                  const trendingMovies = await fetchTrendingMovies({ page });
                   setTrendingMovies(trendingMovies.results);
                   setTotalPage(trendingMovies.total_pages);
                 } catch (error) {
@@ -38,6 +39,8 @@ const HomePage = () => {
                search: `page=${page}`,
              });
   };
+  
+  console.log(page);
   
   return (
       <div>

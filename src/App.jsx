@@ -24,7 +24,7 @@ function App() {
               element={<HomePage />}
           />
           <Route
-              path={"/movies"}
+              path={"MoviesPage"}
               element={<MoviesPage />}
           />
           
