@@ -26,8 +26,6 @@ const CastPage = () => {
             },
             [id]);
   
-  console.log(castInfo);
-  
   if (!castInfo) {
     return <h1>Loading...</h1>;
   }
