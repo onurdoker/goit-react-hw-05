@@ -68,11 +68,15 @@ const MovieDetailPage = () => {
         <div>
           <h3>Additional Information</h3>
           
-          <NavLink to={"cast"}>
+          <NavLink
+              to={"cast"}
+              className={styles.link}
+          >
             Cast
           </NavLink>
           <NavLink
               to={"reviews"}
+              className={styles.link}
           >
             Reviews
           </NavLink>
