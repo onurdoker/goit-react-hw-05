@@ -10,7 +10,7 @@ const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
 const Movies = lazy(() => import("./pages/MoviesPage/Movies.jsx"));
 const MovieDetailPage = lazy(() => import("./pages/MovieDetailPage/MovieDetailPage.jsx"));
 const Cast = lazy(() => import("./pages/CastPage/CastPage.jsx"));
-// const Reviews = lazy(() => import("./pages/ReviewsPage/ReviewsPage.jsx"));
+const Reviews = lazy(() => import("./pages/ReviewsPage/ReviewsPage.jsx"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage.jsx"));
 
 function App() {
@@ -38,10 +38,10 @@ function App() {
                 path={"cast"}
                 element={<Cast />}
             />
-            {/*<Route*/}
-            {/*    path={"reviews"}*/}
-            {/*    element={<Reviews />}*/}
-            {/*/>*/}
+            <Route
+                path={"reviews"}
+                element={<Reviews />}
+            />
           
           
           </Route>

@@ -94,4 +94,22 @@ const fetchCastInfo = async ({ id }) => {
                   error);
   }
 };
-export { fetchTrendingMovies, fetchSearchMovies, fetchMovieDetails, fetchCastInfo };
+
+const fetchReviews = async ({ id }) => {
+  const url = `${BASE_URL}/movie/${id}/reviews`;
+  const options = {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+  };
+  try {
+    const response = await fetch(url,
+                                 options);
+    return response.json();
+  } catch (error) {
+    console.error("Error fetching reviews:",
+                  error);
+  }
+};
+export { fetchTrendingMovies, fetchSearchMovies, fetchMovieDetails, fetchCastInfo, fetchReviews };
