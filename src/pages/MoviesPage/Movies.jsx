@@ -9,7 +9,7 @@ import SearchBar from "../../contents/SearchBar/SearchBar.jsx";
 
 import styles from "../HomePage/HomePage.module.css";
 
-const MoviesPage = () => {
+const Movies = () => {
   
   const location = useLocation();
   const [query, setQuery] = useState("");
@@ -103,4 +103,4 @@ const MoviesPage = () => {
   );
 };
 
-export default MoviesPage;
+export default Movies;

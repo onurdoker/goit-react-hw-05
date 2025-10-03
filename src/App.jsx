@@ -7,7 +7,7 @@ import Header from "./contents/Header/Header.jsx";
 import "./App.css";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
-const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage.jsx"));
+const Movies = lazy(() => import("./pages/MoviesPage/Movies.jsx"));
 const MovieDetailPage = lazy(() => import("./pages/MovieDetailPage/MovieDetailPage.jsx"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage.jsx"));
 
@@ -24,12 +24,12 @@ function App() {
               element={<HomePage />}
           />
           <Route
-              path={"MoviesPage"}
-              element={<MoviesPage />}
+              path={"/movies"}
+              element={<Movies />}
           />
           
           <Route
-              path={"/movies/:id"}
+              path={"/movie/:id"}
               element={<MovieDetailPage />}
           />
           

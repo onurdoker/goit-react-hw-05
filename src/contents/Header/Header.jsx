@@ -13,7 +13,7 @@ const Header = () => {
         </NavLink>
         
         <NavLink
-            to={"/MoviesPage"}
+            to={"/Movies"}
             className={styles.link}
         >
           Movies
