@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, Outlet, useLocation, useParams } from "react-router";
+import { Link, NavLink, Outlet, useLocation, useParams } from "react-router";
 import { fetchMovieDetails } from "../../utils/api.js";
 
-import CastPage from "../CastPage/CastPage.jsx";
 
 import styles from "./MovieDetailPage.module.css";
 
@@ -10,21 +9,26 @@ const MovieDetailPage = () => {
   
   const { id } = useParams();
   const location = useLocation();
-  const goBackRef = useRef(location.state?.from || "/movies");
+  const goBackRef = useRef(location.state?.from || "/");
   const [movie, setMovie] = useState(null);
+  
   const BASE_URL = "https://image.tmdb.org/t/p/w500";
   
   
   useEffect(() => {
               const getMovieDetails = async () => {
-                const movieDetails = await fetchMovieDetails({ id });
-                setMovie(movieDetails);
+                try {
+                  const movieDetails = await fetchMovieDetails({ id });
+                  setMovie(movieDetails);
+                } catch (error) {
+                  console.error("Error fetching movie details:",
+                                error);
+                }
               };
               getMovieDetails();
             },
             [id]);
   
-  console.log(movie);
   
   if (!movie) {
     return <h1>Loading...</h1>;
@@ -32,10 +36,13 @@ const MovieDetailPage = () => {
   
   return (
       <div className={styles.container}>
-        <Link
-            className={styles.link}
-            to={goBackRef.current}
-        >Go Back</Link>
+        <Link to={goBackRef.current}>
+          <button
+              className={styles.btn}
+          >
+            Go Back
+          </button>
+        </Link>
         
         <div className={styles.detail}>
           <img
@@ -60,13 +67,12 @@ const MovieDetailPage = () => {
         </div>
         <div>
           <h3>Additional Information</h3>
-          <Link
-              to={"CastPage"}
-          >
+          
+          <Link to={"cast"}>
             Cast
           </Link>
           <Link
-              to={"ReviewsPage"}
+              to={"reviews"}
           >
             Reviews
           </Link>
