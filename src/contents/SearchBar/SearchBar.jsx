@@ -1,10 +1,19 @@
+import { toast } from "react-toastify";
 import styles from "./SearchBar.module.css";
 
-const SearchBar = ({ setSearch }) => {
+const SearchBar = ({ setQuery }) => {
   
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSearch(event.target.search.value);
+    
+    const query = event.target.search.value;
+    
+    if (query.trim() === "") {
+      toast.info("Please enter a search query");
+      return;
+    }
+    
+    setQuery(query);
   };
   
   
@@ -17,7 +26,7 @@ const SearchBar = ({ setSearch }) => {
               type={"text"}
               autoComplete={"off"}
               autoFocus
-              placeholder={"Search for movies"}
+              placeholder={"Enter a movie name"}
           
           />
           <button className={styles.btn}>Search</button>

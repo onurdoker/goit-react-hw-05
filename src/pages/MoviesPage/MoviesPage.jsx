@@ -18,21 +18,17 @@ const MoviesPage = () => {
   
   const searchParams = new URLSearchParams(location.search);
   const page = Number(searchParams.get("page") ?? 1);
-  console.log(searchParams.get("query"));
-  
   
   const [searchMovies, setSearchMovies] = useState([]);
   
   
   useEffect(() => {
-              
               if (location.search === "") {
                 return;
               }
               
               const newSearch = new URLSearchParams(location.search).get("query");
-              setQuery(newSearch,
-                       page);
+              setQuery(newSearch);
             },
             [location.search,
              page]);
