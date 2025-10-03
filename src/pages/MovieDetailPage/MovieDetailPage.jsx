@@ -68,14 +68,14 @@ const MovieDetailPage = () => {
         <div>
           <h3>Additional Information</h3>
           
-          <Link to={"cast"}>
+          <NavLink to={"cast"}>
             Cast
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
               to={"reviews"}
           >
             Reviews
-          </Link>
+          </NavLink>
         </div>
         <Outlet />
       
