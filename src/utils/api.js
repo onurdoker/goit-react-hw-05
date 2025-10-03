@@ -11,7 +11,6 @@ axios.defaults.params = {
 };
 
 const fetchTrendingMovies = async ({ page }) => {
-  console.log(page);
   if (!page) {
     page = 1;
   }
@@ -37,12 +36,13 @@ const fetchTrendingMovies = async ({ page }) => {
 
 
 const fetchSearchMovies = async ({
-                                   search,
+                                   query,
                                    page,
                                  }) => {
   
-  const url = `${BASE_URL}/search/movie?query=${search}&include_adult=false&language=en-US&page=1`;
+  const url = `${BASE_URL}/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}`;
   const options = {
+    method: "GET",
     headers: {
       accept: "application/json",
       Authorization: `Bearer ${API_KEY}`,

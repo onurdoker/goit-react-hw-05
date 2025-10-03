@@ -40,8 +40,6 @@ const HomePage = () => {
              });
   };
   
-  console.log(page);
-  
   return (
       <div>
         <h1 className={styles.title}>Trending Movies</h1>

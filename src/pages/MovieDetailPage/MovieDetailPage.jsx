@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useLocation, useParams } from "react-router";
+import { Link, Outlet, useLocation, useParams } from "react-router";
 import { fetchMovieDetails } from "../../utils/api.js";
+
+import CastPage from "../CastPage/CastPage.jsx";
 
 import styles from "./MovieDetailPage.module.css";
 
@@ -27,8 +29,6 @@ const MovieDetailPage = () => {
   if (!movie) {
     return <h1>Loading...</h1>;
   }
-  console.log(goBackRef.current);
-  console.log(location.state?.from);
   
   return (
       <div className={styles.container}>
@@ -60,9 +60,20 @@ const MovieDetailPage = () => {
         </div>
         <div>
           <h3>Additional Information</h3>
-          <p>Cast</p>
-          <p>Reviews</p>
+          <Link
+              to={"CastPage"}
+          >
+            Cast
+          </Link>
+          <Link
+              to={"ReviewsPage"}
+          >
+            Reviews
+          </Link>
         </div>
+        <Outlet />
+      
+      
       </div>
   );
 };
